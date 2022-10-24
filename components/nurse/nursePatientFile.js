@@ -5,6 +5,7 @@ import RNPickerSelect from "react-native-picker-select";
 import { CheckBox } from "react-native";
 import { Button } from "react-native";
 import { Picker } from "react-native";
+import React from "react";
 
 const NursePatientFile = ({route}) => {
     const [agree, setAgree] = useState(false);
@@ -42,6 +43,7 @@ const NursePatientFile = ({route}) => {
             condition:patient.condition
         }
     ]
+    const [nurseAdd,setNurseAdd]=React.useState(false)
     console.log(agree)
     return ( 
         <SafeAreaView  style={styles.container}> 
@@ -63,7 +65,7 @@ const NursePatientFile = ({route}) => {
         </View>
         <View>
         <View style={{alignSelf:"stretch",height: 200,marginTop:20,backgroundColor:"#5060F0",borderRadius:15}}>
-            <Text style={{color:"white",marginLeft:10}}>New record</Text>
+            <Text style={{color:"white",marginLeft:10}}>Today's records</Text>
         <View style={{width: 339,height: 1,backgroundColor: "#FFFFFF"}} ></View>
         </View>
         <View style={{flexDirection:"row"}}>
@@ -72,7 +74,7 @@ const NursePatientFile = ({route}) => {
           onValueChange={() => setAgree(!agree)}
           color={agree ? "#4630EB" : "black"}
         />
-        <Text style={{color:"white",marginLeft:10}}>Seen by receptionist</Text>
+        <Text style={{color:"white",marginLeft:10}}>Seen by nurse</Text>
         </View>
         
           <Button
@@ -92,10 +94,22 @@ const NursePatientFile = ({route}) => {
                 return(
                         
                         <View key={index} style={{width:300,alignSelf:"center", backgroundColor: "#2827D3",marginTop:10,padding:5,borderRadius:8}}>
-                            <Text style={{color:"white"}}>Date: {today.toString()}</Text>
+                            <Text style={{color:"white"}}>Date: {today.toString().substring(0,15)}</Text>
                            
                             <Text style={{color:"white"}}>Patient: {record.patient}</Text>
                             <Text style={{color:"white"}}>Notes: {record.syptoms}</Text>
+                            {nurseAdd===false?(
+                                <TouchableOpacity onPress={()=>setNurseAdd(true)}>Add</TouchableOpacity>
+                            ):(
+                                <View>
+                                <TextInput placeholder="Notes by nurse" style={{width: "95%", height: 62, backgroundColor: "#5060F0",borderRadius: 5,placeholderTextColor:"white",paddingLeft:10,color:"white",marginBottom:20,alignSelf:"center"}}>
+                                </TextInput>
+                                <TouchableOpacity>
+                                    Save
+                                </TouchableOpacity>
+                                </View>
+
+                            )}
                         </View>
             )
             })}
