@@ -10,7 +10,8 @@ const RcHome = ({navigation}) => {
              "seshego"
              +"0751"
              ,
-            Notes:""
+            Notes:"",
+            condition:"Severe"
 
         },
         {
@@ -20,7 +21,8 @@ const RcHome = ({navigation}) => {
              "seshego"
              +"0751"
              ,
-            Notes:""
+            Notes:"",
+            condition:"Moderate",
 
         },
         {
@@ -30,7 +32,8 @@ const RcHome = ({navigation}) => {
              "seshego"
              +"0751"
              ,
-            Notes:""
+            Notes:"",
+            condition:"Severe"
 
         },
         {
@@ -40,7 +43,8 @@ const RcHome = ({navigation}) => {
              "seshego"
              +"0751"
              ,
-            Notes:""
+            Notes:"",
+            condition:"Moderate"
 
         },
         {
@@ -50,7 +54,8 @@ const RcHome = ({navigation}) => {
              "seshego"
              +"0751"
              ,
-            Notes:""
+            Notes:"",
+            condition:"Mild"
 
         },
         {
@@ -60,7 +65,8 @@ const RcHome = ({navigation}) => {
              "seshego"
              +"0751"
              ,
-            Notes:""
+            Notes:"",
+            condition:"Mild"
 
         },
 

@@ -33,7 +33,7 @@ const LoginAs = ({ navigation }) => {
       <TouchableOpacity
         style={styles.recep}
         onPress={() => {
-          navigation.navigate("login");
+          navigation.navigate("rcLogin");
         }}
       >
         <Text style={{ color: "#ECECEC", fontSize: 18, fontWeight: 400 }}>
@@ -41,7 +41,7 @@ const LoginAs = ({ navigation }) => {
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.nurse}>
+      <TouchableOpacity style={styles.nurse}  onPress={() => {navigation.navigate("nurseHome")}}>
         <Text style={{ color: "#ECECEC", fontSize: 18, fontWeight: 400 }}>
           Nurse
         </Text>

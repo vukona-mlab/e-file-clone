@@ -2,8 +2,6 @@ import {
   faUser,
   faLock,
   faFingerprint,
-  faMailBulk,
-  faUnlock,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
@@ -18,27 +16,16 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const Register = ({ navigation }) => {
+const RcLogin = ({ navigation }) => {
   const [id, setId] = useState("ID No or Employee No");
-  const [email, setEmail] = useState("Email");
   const [pass, setPass] = useState("Password");
-  const [cPass, setCpass] = useState("Confirm Password");
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.circle1}></View>
       <View style={styles.circle2}></View>
       <View style={styles.circle3}>
-        <Text
-          style={{color: "white", fontSize: 24, fontWeight: 700,marginTop:300}}
-        >
-          Create Account
-        </Text>
+        <Text style={styles.logIn}>Log-In</Text>
       </View>
-
-      <View style={styles.circle4}></View>
-      <View style={styles.circle5}></View>
-      <View style={styles.circle6}></View>
-      
       <View style={styles.empNo}>
         <FontAwesomeIcon icon={faUser} size={25} style={{ color: "#ECECEC" }} />
         <TextInput
@@ -50,24 +37,6 @@ const Register = ({ navigation }) => {
             height: 40,
           }}
           placeholder={id}
-          placeholderTextColor="#ECECEC"
-        />
-      </View>
-      <View style={styles.email}>
-        <FontAwesomeIcon
-          icon={faMailBulk}
-          size={25}
-          style={{ color: "#ECECEC" }}
-        />
-        <TextInput
-          onChangeText={setEmail}
-          style={{
-            color: "#ECECEC",
-            width: "90%",
-            paddingLeft: 120,
-            height: 40,
-          }}
-          placeholder={email}
           placeholderTextColor="#ECECEC"
         />
       </View>
@@ -85,35 +54,15 @@ const Register = ({ navigation }) => {
           placeholderTextColor="#ECECEC"
         />
       </View>
-      <View style={styles.cPassword}>
-        <FontAwesomeIcon
-          icon={faUnlock}
-          size={25}
-          style={{ color: "#ECECEC" }}
-        />
-        <TextInput
-          onChangeText={setCpass}
-          style={{
-            color: "#ECECEC",
-            width: "90%",
-            paddingLeft: 80,
-            height: 40,
-          }}
-          placeholder={cPass}
-          placeholderTextColor="#ECECEC"
-        />
-      </View>
-      <View>
-      <Text
-        style={{ color: "#ECECEC", marginTop: 20 }}
-        onPress={() => {navigation.navigate("rcLogin");}}> Already have an account?</Text>
+      <Text style={{ color: "#ECECEC", marginTop: 20 }}onPress={()=>{(navigation.navigate('register'))}}>
+        Dont have an account?
+      </Text>
+      <Text style={{ color: "#ECECEC", marginTop: 15 }} >Forgot password?</Text>
 
-      </View>
-      
       <TouchableOpacity
         style={styles.finger}
         onPress={() => {
-          navigation.navigate("rclogin");
+          navigation.navigate("rcHome");
         }}
       >
         <FontAwesomeIcon
@@ -137,7 +86,7 @@ const styles = StyleSheet.create({
     width: 508,
     height: 508,
     left: -50,
-    top: -290,
+    top: -90,
     opacity: "25%",
     backgroundColor: "#5060F0",
     borderRadius: "50%",
@@ -147,7 +96,7 @@ const styles = StyleSheet.create({
     width: 410,
     height: 410,
     left: 0,
-    top: -250,
+    top: -50,
     opacity: "35%",
     backgroundColor: "#5060F0",
     borderRadius: "50%",
@@ -157,75 +106,19 @@ const styles = StyleSheet.create({
     width: 300,
     height: 300,
     left: 55,
-    top: -200,
+    top: 4,
     backgroundColor: "#5060F0",
     borderRadius: "50%",
     alignItems: "center",
+    justifyContent: "center",
   },
-  circle4: {
-    position: "absolute",
-    width: 508,
-    height: 508,
-    left: -50,
-    top: 290,
-    opacity: "25%",
-    backgroundColor: "#5060F0",
-    borderRadius: "50%",
+  logIn: {
+    color: "white",
+    fontSize: 24,
+    fontWeight: 700,
   },
-  circle5: {
-    position: "absolute",
-    width: 410,
-    height: 410,
-    left: 0,
-    top: 340,
-    opacity: "35%",
-    backgroundColor: "#5060F0",
-    borderRadius: "50%",
-  },
-  circle6: {
-    position: "absolute",
-    width: 300,
-    height: 300,
-    left: 55,
-    top: 396,
-    opacity: "55%",
-    backgroundColor: "#5060F0",
-    borderRadius: "50%",
-    alignItems: "center",
-  },
-
   empNo: {
-    marginTop: 350,
-    borderBottomWidth: 2,
-    borderBottomColor: "#ECECEC",
-    width: "85%",
-    paddingLeft: 8,
-    color: "#ECECEC",
-    height: 40,
-    flexDirection: "row",
-    gap: 5,
-    alignItems: "center",
-    backgroundColor: "#3939d7",
-    borderRadius: 10,
-    height: 50,
-  },
-  email: {
-    marginTop: 30,
-    borderBottomWidth: 2,
-    borderBottomColor: "#ECECEC",
-    width: "85%",
-    paddingLeft: 8,
-    color: "#ECECEC",
-    height: 40,
-    flexDirection: "row",
-    gap: 5,
-    alignItems: "center",
-    backgroundColor: "#3939d7",
-    borderRadius: 10,
-    height: 50,
-  },
-  cPassword: {
-    marginTop: 30,
+    marginTop: 500,
     borderBottomWidth: 2,
     borderBottomColor: "#ECECEC",
     width: "85%",
@@ -264,9 +157,9 @@ const styles = StyleSheet.create({
     borderColor: "#ECECEC",
     borderRadius: 8,
     backgroundColor: "#3939d7",
-    marginTop: 40,
+    marginTop: 20,
     marginLeft: 200,
   },
 });
 
-export default Register;
+export default RcLogin;
