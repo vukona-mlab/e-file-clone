@@ -16,31 +16,36 @@ const NursePatientFile = ({route}) => {
             date:today,
             patient:patient.fullName,
             syptoms:"fever* or feeling feverish/chills, sore throat, cough, runny or stuffy nose, muscle or body aches, fatigue (tiredness), body aches, chills, cough, fatigue, fever",
-            condition: patient.condition
+            condition: patient.condition,
+            date:"Mon Oct 24 2022"
         },
         {
             date:today,
             patient:patient.fullName,
             syptoms:"fever* or feeling feverish/chills, sore throat, cough, runny or stuffy nose, muscle or body aches, fatigue (tiredness), body aches, chills, cough, fatigue, fever",
-            condition:patient.condition
+            condition:patient.condition,
+            date:"Tue Oct 25 2022"
         },
         {
             date:today,
             patient:patient.fullName,
             syptoms:"fever* or feeling feverish/chills, sore throat, cough, runny or stuffy nose, muscle or body aches, fatigue (tiredness), body aches, chills, cough, fatigue, fever",
-            condition:patient.condition
+            condition:patient.condition,
+            date:"Mon Oct 24 2022"
         },
         {
             date:today,
             patient:patient.fullName,
             syptoms:"fever* or feeling feverish/chills, sore throat, cough, runny or stuffy nose, muscle or body aches, fatigue (tiredness), body aches, chills, cough, fatigue, fever",
-            condition:patient.condition
+            condition:patient.condition,
+            date:"Tue Oct 25 2022"
         },
         {
             date:today,
             patient:patient.fullName,
             syptoms:"fever* or feeling feverish/chills, sore throat, cough, runny or stuffy nose, muscle or body aches, fatigue (tiredness), body aches, chills, cough, fatigue, fever",
-            condition:patient.condition
+            condition:patient.condition,
+            date:"Wed Oct 26 2022"
         }
     ]
     const [nurseAdd,setNurseAdd]=React.useState(false)
@@ -64,10 +69,40 @@ const NursePatientFile = ({route}) => {
         </Picker>
         </View>
         <View>
-        <View style={{alignSelf:"stretch",height: 200,marginTop:20,backgroundColor:"#5060F0",borderRadius:15}}>
+        <View style={styles.todayRecords}>
             <Text style={{color:"white",marginLeft:10}}>Today's records</Text>
         <View style={{width: 339,height: 1,backgroundColor: "#FFFFFF"}} ></View>
+
+        <ScrollView>
+            {records.map((record,i)=>(
+                record.date===today.toString().substring(0,15)?(
+             
+                        <View key={i} style={{width:300,alignSelf:"center", backgroundColor: "#5060F0",marginTop:10,padding:5,borderRadius:8}}>
+                            <Text style={{color:"white"}}>Date: {record.date}</Text>
+                            <Text style={{color:"white"}}>Patient: {record.patient}</Text>
+                            <Text style={{color:"white"}}>Notes: {record.syptoms}</Text>
+                            {nurseAdd===false?(
+                                <TouchableOpacity style={styles.btn} onPress={()=>setNurseAdd(true)}>Add notes</TouchableOpacity>
+                            ):(
+                                <View>
+                                <TextInput placeholder="Notes by nurse" style={{width: "98%", height: 42, backgroundColor: "#2827D3",borderRadius: 5,placeholderTextColor:"white",paddingLeft:10,color:"white",margin:10,alignSelf:"center"}}>
+                                </TextInput>
+                                <TouchableOpacity style={styles.btn}>
+                                    Save
+                                </TouchableOpacity>
+                                </View>
+                            )}
+                        
+                    </View>
+                ):(
+                <Text style={{color:"white"}}></Text>
+                )
+            ))
+
+            }
+        </ScrollView>
         </View>
+ 
         <View style={{flexDirection:"row"}}>
         <CheckBox
           value={agree}
@@ -86,7 +121,7 @@ const NursePatientFile = ({route}) => {
         }}
       />
 
-        <View style={{alignSelf:"stretch",marginTop:20,backgroundColor:"#5060F0",borderRadius:15,height:400,marginBottom:30}}>
+        <View style={{alignSelf:"stretch",marginTop:20,backgroundColor:"#5060F0",borderRadius:15,height:300,marginBottom:30}}>
         <Text style={{color:"white",marginLeft:10}}>Patient Medical history</Text>
         <View style={{width: 339,height: 1,backgroundColor: "#FFFFFF"}} ></View>
             <ScrollView style={{marginTop:10}}>
@@ -94,22 +129,10 @@ const NursePatientFile = ({route}) => {
                 return(
                         
                         <View key={index} style={{width:300,alignSelf:"center", backgroundColor: "#2827D3",marginTop:10,padding:5,borderRadius:8}}>
-                            <Text style={{color:"white"}}>Date: {today.toString().substring(0,15)}</Text>
-                           
+                            <Text style={{color:"white"}}>Date: {record.date}</Text>
                             <Text style={{color:"white"}}>Patient: {record.patient}</Text>
                             <Text style={{color:"white"}}>Notes: {record.syptoms}</Text>
-                            {nurseAdd===false?(
-                                <TouchableOpacity onPress={()=>setNurseAdd(true)}>Add</TouchableOpacity>
-                            ):(
-                                <View>
-                                <TextInput placeholder="Notes by nurse" style={{width: "95%", height: 62, backgroundColor: "#5060F0",borderRadius: 5,placeholderTextColor:"white",paddingLeft:10,color:"white",marginBottom:20,alignSelf:"center"}}>
-                                </TextInput>
-                                <TouchableOpacity>
-                                    Save
-                                </TouchableOpacity>
-                                </View>
-
-                            )}
+                           
                         </View>
             )
             })}
@@ -118,7 +141,7 @@ const NursePatientFile = ({route}) => {
         </View>
         </View>
          
-        <TouchableOpacity style={{width: 246, height: 41, backgroundColor: "#5060F0",borderRadius: 5,justifyContent:"center",marginBottom:40}} onPress={()=>navigation.navigate("nurseLogin")}>
+        <TouchableOpacity style={{width: 246, height: 41, backgroundColor: "#5060F0",borderRadius: 5,justifyContent:"center",marginBottom:20}} onPress={()=>navigation.navigate("nurseLogin")}>
             <Text style={{alignSelf:"center",color:"white"}}>Close</Text>
         </TouchableOpacity>
         </SafeAreaView>
@@ -140,6 +163,29 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         marginTop:10,
         paddingLeft:10
+    },
+    btn:
+    {
+        color:"white",
+        width:200,
+        height:30,
+        backgroundColor:"#189bcc"
+        ,alignSelf:"center",
+        alignItems:"center",
+        justifyContent:"center",
+        borderRadius:8,
+        margin:10
+    },
+    todayRecords:{
+        
+            marginBottom:20,
+            padding:20,
+          alignSelf:"stretch",
+            height:300,
+            marginTop:20,
+            // backgroundColor:"#5060F0",
+            borderRadius:15,
+            border: "2px solid #9C9EEB",
     }
 })
  
