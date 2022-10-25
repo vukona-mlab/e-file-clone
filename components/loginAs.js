@@ -3,21 +3,23 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from "react-native";
+import logo from './images/real.png'
 
 const LoginAs = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.circle1}></View>
-      <View style={styles.circle2}></View>
-      <View style={styles.circle3}></View>
+      <View style={[styles.circle1,{ opacity: "25%",borderRadius: "50%",}]}></View>
+      <View style={[styles.circle2,{opacity: "35%", borderRadius: "50%",}]}></View>
+      <View style={[styles.circle3,{ borderRadius: "50%",borderRadius: "50%",opacity: "35%",}]}></View>
 
-      <View style={styles.circle4}></View>
-      <View style={styles.circle5}></View>
-      <View style={styles.circle6}></View>
+      <View style={[styles.circle4,{opacity: "25%",borderRadius: "50%"}]}></View>
+      <View style={[styles.circle5,{borderRadius: "50%",opacity: "35%",}]}></View>
+      <View style={[styles.circle6,{borderRadius: "50%",}]}></View>
 
-      <TouchableOpacity style={styles.circle7}>
+      <TouchableOpacity style={[styles.circle7,{borderRadius: "50%",}]}>
         <Text
           style={{
             color: "#ECECEC",
@@ -30,25 +32,33 @@ const LoginAs = ({ navigation }) => {
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
-        style={styles.recep}
+      <Image source={logo} style={{width:300,height:250,marginTop:"25%"}}/>
+
+      {/* <TouchableOpacity
+        style={[styles.recep,{width: "84%",height:"6%",marginTop: "20%",}]}
         onPress={() => {
-          navigation.navigate("rcLogin");
+          navigation.navigate("login");
         }}
       >
-        <Text style={{ color: "#ECECEC", fontSize: 18, fontWeight: 400 }}>
+        <Text style={{ color: "#ECECEC", fontSize: 15, fontWeight: 400,textAlign:"center" }}>
           Receptionist
         </Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
-      <TouchableOpacity style={styles.nurse}  onPress={() => {navigation.navigate("nurseHome")}}>
-        <Text style={{ color: "#ECECEC", fontSize: 18, fontWeight: 400 }}>
+      <TouchableOpacity style={[styles.nurse,{ width: "84%",height:"6%",marginTop: "30%",}]} 
+       onPress={() => {
+        navigation.navigate("nurseLogIn");
+      }}>
+        <Text style={{ color: "#ECECEC", fontSize: 15, fontWeight: 400,textAlign:"center" }}>
           Nurse
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.doctor}>
-        <Text style={{ color: "#ECECEC", fontSize: 20, fontWeight: 400 }}>
+      <TouchableOpacity style={[styles.doctor,{width: "84%",height:"6%",marginTop: "7%",}]}
+      onPress={()=>{
+        navigation.navigate('doctorLogin')
+      }}>
+        <Text style={{ color: "#ECECEC", fontSize: 15, fontWeight: 400,textAlign:"center" }}>
           Doctor
         </Text>
       </TouchableOpacity>
@@ -64,66 +74,56 @@ const styles = StyleSheet.create({
   },
   circle1: {
     position: "absolute",
-    width: 408,
-    height: 408,
-    right: -80,
-    top: -90,
-    opacity: "25%",
+    width: 300,
+    height: 300,
+    right: -110,
+    top: -60,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
   },
   circle2: {
     position: "absolute",
-    width: 310,
-    height: 310,
-    right: -30,
-    top: -50,
-    opacity: "35%",
+    width: 230,
+    height: 230,
+    right: -80,
+    top: -30,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
   },
   circle3: {
     position: "absolute",
-    width: 200,
-    height: 200,
-    right: 25,
-    top: 4,
+    width: 140,
+    height: 140,
+    right: -35,
+    top: 15,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
     alignItems: "center",
     justifyContent: "center",
   },
   circle4: {
     position: "absolute",
-    width: 308,
-    height: 308,
-    left: -143,
-    bottom: 90,
-    opacity: "25%",
+    width: 240,
+    height: 240,
+    left: -110,
+    bottom: 87,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
+    
   },
   circle5: {
     position: "absolute",
-    width: 200,
-    height: 200,
-    left: -90,
-    bottom: 145,
+    width: 160,
+    height: 160,
+    left: -60,
+    bottom: 125,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
-    opacity: "35%",
     alignItems: "center",
     justifyContent: "center",
   },
   circle6: {
     position: "absolute",
-    width: 110,
-    height: 110,
-    left: -53,
-    bottom: 188,
+    width: 100,
+    height: 100,
+    left: -35,
+    bottom: 155,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
-    // opacity:"35%",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -135,55 +135,35 @@ const styles = StyleSheet.create({
     left: 103,
     bottom: -130,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
-    // opacity:"35%",
     alignItems: "center",
-    // justifyContent: "center",
+  
   },
   recep: {
-    marginTop: 380,
     borderBottomWidth: 2,
     borderBottomColor: "#ECECEC",
-    width: "85%",
     color: "#ECECEC",
-    height: 40,
-    flexDirection: "row",
-    gap: 5,
     alignItems: "center",
-    justifyContent:"center",
     backgroundColor: "#3939d7",
-    borderRadius: 10,
-    height: 50,
+    borderRadius: 7,
+    justifyContent:"center"
   },
   nurse: {
-    marginTop: 40,
     borderBottomWidth: 2,
     borderBottomColor: "#ECECEC",
-    width: "85%",
-    justifyContent:"center",
     color: "#ECECEC",
-    height: 40,
-    flexDirection: "row",
-    gap: 5,
     alignItems: "center",
     backgroundColor: "#3939d7",
-    borderRadius: 10,
-    height: 50,
+    borderRadius: 7,
+    justifyContent:"center"
   },
   doctor: {
-    marginTop: 40,
     borderBottomWidth: 2,
     borderBottomColor: "#ECECEC",
-    width: "85%",
-    justifyContent:"center",
     color: "#ECECEC",
-    height: 40,
-    flexDirection: "row",
-    gap: 5,
     alignItems: "center",
     backgroundColor: "#3939d7",
-    borderRadius: 10,
-    height: 50,
+    borderRadius: 7,
+    justifyContent:"center"
   },
 });
 export default LoginAs;
