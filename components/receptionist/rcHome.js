@@ -1,7 +1,7 @@
 import { SafeAreaView,StyleSheet, View, Text,ScrollView, Pressable } from "react-native";
-import { TextInput, TouchableOpacity } from "react-native";
+import { TextInput, TouchableOpacity } from "react-native-web";
 
-const RcHome = () => {
+const RcHome = ({navigation}) => {
     const patientInfo=[
         {
             idno:"982900980219",
@@ -10,62 +10,67 @@ const RcHome = () => {
              "seshego"
              +"0751"
              ,
-            Notes:""
+            Notes:"",
+            condition:"Severe"
 
         },
         {
-            idno:"982900980219",
-            fullName:"Thabo Mphela",
+            idno:"002900980219",
+            fullName:"Katlego Moila",
             address:"321 zone 1,"+
              "seshego"
              +"0751"
              ,
-            Notes:""
+            Notes:"",
+            condition:"Moderate",
 
         },
         {
-            idno:"982900980219",
-            fullName:"Thabo Mphela",
+            idno:"832900980219",
+            fullName:"Joseph Laka",
             address:"321 zone 1,"+
              "seshego"
              +"0751"
              ,
-            Notes:""
+            Notes:"",
+            condition:"Severe"
 
         },
         {
-            idno:"982900980219",
-            fullName:"Thabo Mphela",
+            idno:"232902340212",
+            fullName:"Thapelo Seimela",
             address:"321 zone 1,"+
              "seshego"
              +"0751"
              ,
-            Notes:""
+            Notes:"",
+            condition:"Moderate"
 
         },
         {
-            idno:"982900980219",
-            fullName:"Thabo Mphela",
+            idno:"686590980233",
+            fullName:"Kagiso Ledwaba",
             address:"321 zone 1,"+
              "seshego"
              +"0751"
              ,
-            Notes:""
+            Notes:"",
+            condition:"Mild"
 
         },
         {
-            idno:"982900980219",
-            fullName:"Thabo Mphela",
+            idno:"012900980344",
+            fullName:"John Malebana",
             address:"321 zone 1,"+
              "seshego"
              +"0751"
              ,
-            Notes:""
+            Notes:"",
+            condition:"Mild"
 
         },
 
     ]
-    console.log(patientInfo[1].fullName)
     return ( 
         <SafeAreaView  style={styles.container}>
         <View style={{width:"100%",flexDirection:"row", paddingLeft:40,marginTop:60}}>
@@ -83,8 +88,8 @@ const RcHome = () => {
             placeholder="Search..."
             />
     
-        {patientInfo.map((patient)=>(
-            <TouchableOpacity style={styles.patient}>
+        {patientInfo.map((patient,index)=>(
+            <TouchableOpacity style={styles.patient} key={index} onPress={()=>navigation.navigate("rcPatientFile",{patient:patient})}>
                 <Text style={{color:"white"}}>{patient.fullName} {patient.idno}</Text>
             </TouchableOpacity>
         ))
