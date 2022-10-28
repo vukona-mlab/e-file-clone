@@ -20,12 +20,12 @@ const App = () => {
         }}
       >
         <Stack.Screen name="loginAs" component={LoginAs} />
-        <Stack.Screen name="rcLogin" component={RcLogin} />
+        {/* <Stack.Screen name="rcLogin" component={RcLogin} />
         <Stack.Screen name="register" component={Register} />
         <Stack.Screen name="rcHome" component={RcHome} />
         <Stack.Screen name="rcPatientFile" component={RcPatientFile} />
         <Stack.Screen name="nursePatientFile" component={NursePatientFile} />
-        <Stack.Screen name="nurseHome" component={NurseHome} />
+        <Stack.Screen name="nurseHome" component={NurseHome} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

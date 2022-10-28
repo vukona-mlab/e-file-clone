@@ -53,6 +53,7 @@ const LoginAs = ({ navigation }) => {
         </Text>
       </TouchableOpacity>
     </SafeAreaView>
+  
   );
 };
 const styles = StyleSheet.create({
@@ -68,9 +69,9 @@ const styles = StyleSheet.create({
     height: 408,
     right: -80,
     top: -90,
-    opacity: "25%",
+    opacity: 0.25,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
+    borderRadius: 0.5,
   },
   circle2: {
     position: "absolute",
@@ -78,9 +79,9 @@ const styles = StyleSheet.create({
     height: 310,
     right: -30,
     top: -50,
-    opacity: "35%",
+    opacity: 0.35,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
+    borderRadius: 5,
   },
   circle3: {
     position: "absolute",
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
     right: 25,
     top: 4,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
+    borderRadius: 5,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -99,9 +100,9 @@ const styles = StyleSheet.create({
     height: 308,
     left: -143,
     bottom: 90,
-    opacity: "25%",
+    opacity: 0.25,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
+    borderRadius: 5,
   },
   circle5: {
     position: "absolute",
@@ -110,8 +111,8 @@ const styles = StyleSheet.create({
     left: -90,
     bottom: 145,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
-    opacity: "35%",
+    borderRadius: 5,
+    opacity: 0.35,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -122,8 +123,8 @@ const styles = StyleSheet.create({
     left: -53,
     bottom: 188,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
-    // opacity:"35%",
+    borderRadius: 5,
+    opacity:0.35,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -135,10 +136,10 @@ const styles = StyleSheet.create({
     left: 103,
     bottom: -130,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
-    // opacity:"35%",
+    borderRadius: 5,
+    opacity:0.35,
     alignItems: "center",
-    // justifyContent: "center",
+    justifyContent: "center",
   },
   recep: {
     marginTop: 380,
