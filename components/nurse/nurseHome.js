@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
           marginBottom:40,
           padding:20,
           border: "2px solid #9C9EEB",
-          borderRadius: "15px",
+          borderRadius: 15,
       },
       patient:{
           width: "95%",

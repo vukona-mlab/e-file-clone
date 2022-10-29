@@ -25,9 +25,9 @@ const Register = ({ navigation }) => {
   const [cPass, setCpass] = useState("Confirm Password");
   return (
     <SafeAreaView style={styles.container}>
-      <View style={[styles.circle1,{opacity: '25%',borderRadius: '50%',}]}></View>
-      <View style={[styles.circle2,{opacity: '35%',borderRadius: '50%',}]}></View>
-      <View style={[styles.circle3,{borderRadius: '50%',borderRadius: '50%',}]}>
+      <View style={[styles.circle1,{opacity: 0.25}]}></View>
+      <View style={[styles.circle2,{opacity: 0.35}]}></View>
+      <View style={[styles.circle3 ]}>
         <Text
           style={{color: "white", fontSize: 24, fontWeight: 700,marginTop:250}}
         >
@@ -35,9 +35,9 @@ const Register = ({ navigation }) => {
         </Text>
       </View>
 
-      <View style={[styles.circle4,{ opacity: '25%',borderRadius: '50%',}]}></View>
-      <View style={[styles.circle5,{opacity: '35%',}]}></View>
-      <View style={[styles.circle6,{borderRadius: '50%',opacity:'50%'}]}></View>
+      <View style={[styles.circle4,{ opacity: 0.25}]}></View>
+      <View style={[styles.circle5,{opacity: 0.35,}]}></View>
+      <View style={[styles.circle6,{opacity:0.5}]}></View>
       
       <View style={[styles.empNo,{width: '85%',}]}>
         <FontAwesomeIcon icon={faUser} size={20} style={{ color: "#ECECEC" }} />
@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
     left: -50,
     top: -245,
     backgroundColor: "#5060F0",
+    borderRadius: 240
   },
   circle2: {
     position: "absolute",
@@ -147,6 +148,7 @@ const styles = StyleSheet.create({
     left: -10,
     top: -220,
     backgroundColor: "#5060F0",
+    borderRadius: 195
   },
   circle3: {
     position: "absolute",
@@ -156,6 +158,7 @@ const styles = StyleSheet.create({
     top: -140,
     backgroundColor: "#5060F0",
     alignItems: "center",
+    borderRadius: 125
   },
   circle4: {
     position: "absolute",
@@ -164,6 +167,7 @@ const styles = StyleSheet.create({
     left: -50,
     top: 290,
     backgroundColor: "#5060F0",
+    borderRadius: 254
     
   },
   circle5: {
@@ -173,7 +177,7 @@ const styles = StyleSheet.create({
     left: 0,
     top: 340,
     backgroundColor: "#5060F0",
-    
+    borderRadius: 205
   },
   circle6: {
     position: "absolute",
@@ -183,6 +187,7 @@ const styles = StyleSheet.create({
     top: 396,
     backgroundColor: "#5060F0",
     alignItems: "center",
+    borderRadius: 150
   },
 
   empNo: {

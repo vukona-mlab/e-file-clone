@@ -29,7 +29,7 @@ const Register = ({ navigation }) => {
       <View style={styles.circle2}></View>
       <View style={styles.circle3}>
         <Text
-          style={{color: "white", fontSize: 24, fontWeight: 700,marginTop:300}}
+          style={{color: "white", fontSize: 24, fontWeight: "bold",marginTop:300}}
         >
           Create Account
         </Text>
@@ -138,9 +138,9 @@ const styles = StyleSheet.create({
     height: 508,
     left: -50,
     top: -290,
-    opacity: "25%",
+    opacity: 0.25,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
+    borderRadius: 254,
   },
   circle2: {
     position: "absolute",
@@ -148,9 +148,9 @@ const styles = StyleSheet.create({
     height: 410,
     left: 0,
     top: -250,
-    opacity: "35%",
+    opacity: 0.35,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
+    borderRadius: 205,
   },
   circle3: {
     position: "absolute",
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     left: 55,
     top: -200,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
+    borderRadius: 150,
     alignItems: "center",
   },
   circle4: {
@@ -168,9 +168,9 @@ const styles = StyleSheet.create({
     height: 508,
     left: -50,
     top: 290,
-    opacity: "25%",
+    opacity: 0.25,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
+    borderRadius: 254,
   },
   circle5: {
     position: "absolute",
@@ -178,9 +178,9 @@ const styles = StyleSheet.create({
     height: 410,
     left: 0,
     top: 340,
-    opacity: "35%",
+    opacity: 0.35,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
+    borderRadius: 205,
   },
   circle6: {
     position: "absolute",
@@ -188,9 +188,9 @@ const styles = StyleSheet.create({
     height: 300,
     left: 55,
     top: 396,
-    opacity: "55%",
+    opacity: 0.55,
     backgroundColor: "#5060F0",
-    borderRadius: "50%",
+    borderRadius: 150,
     alignItems: "center",
   },
 
